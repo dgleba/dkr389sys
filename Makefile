@@ -28,13 +28,19 @@ mysh:
 	docker-compose  -f mysql/docker-compose.yml exec dbm /bin/bash
 
 
+myimpa:
+	docker-compose  -f mysql/docker-compose.yml exec dbm /bin/bash /root/sh21.sh
+
 mydumpa:
-	docker-compose  -f mysql/docker-compose.yml exec dbm sh -c 'exec mysqldump  --force --opt --user=root -p"$$MYSQL_ROOT_PASSWORD" --databases dkrdbm  \
+	docker-compose  -f mysql/docker-compose.yml exec dbm /bin/bash /root/all-individual-mysqldump.sh
+ 
+
+mydumpb:
+	docker-compose  -f mysql/docker-compose.yml exec dbm sh -c 'exec mysqldump  --force --opt --user=root -p"$$MYSQL_ROOT_PASSWORD" --databases dkrdbm dgnote130  \
     --complete-insert --quote-names  --allow-keywords  \
     --skip-add-drop-table --add-drop-database  --skip-lock-tables  --no-tablespaces --no-create-info --routines  \
     --events  > /home/db_mysqldump.sql '
  
-
  
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -56,7 +62,13 @@ umasktest:
 djbash:
 	docker-compose run djangodev /bin/bash
 
+dps:   
+	docker ps 
+	docker ps -a
+	docker images
+	docker volume ls 
 
+  
 # clean docker containers 
 #
 clean:   

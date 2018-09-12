@@ -1,4 +1,4 @@
-# Dkr385sys
+# Dkr389sys
 
 This repo creates docker system of mysql php rails django.
 
@@ -20,15 +20,15 @@ docker-compose version 1.21.2, build a133471
 
 ```
 cd /srv/dkr/
-git clone  https://github.com/dgleba/dkr385sys.git 385dkrsys
-cd 385dkrsys
+git clone  https://github.com/dgleba/dkr389sys.git 
+cd dkr389sys
 ```
 
-see ./385dkrsys/dk385sys_notes_385dkr.txt
+see instructions...txt.md for more info
 
 
-## This
+## This is
 
-This: https://github.com/dgleba/dkr385sys
+This: https://github.com/dgleba/dkr389sys
 
 David Gleba dgleba@gmail.com

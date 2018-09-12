@@ -1,7 +1,7 @@
 
 # This: 
 
-https://github.com/dgleba/p382dkr  - I should rename it to dkr382r-django
+https://github.com/dgleba/dkr382r-django
 
 
 _____________
@@ -9,12 +9,13 @@ _____________
 _____________
 
 
-## The following is From:  
+## The following is originally From:  
 
 https://github.com/hugobrilhante/docker-django-gunicorn-nginx-postgres
 
 ~
 
+## readme.md from https://github.com/hugobrilhante/docker-django-gunicorn-nginx-postgres
 
 # django-gunicorn-nginx-postgres
 

@@ -1,24 +1,24 @@
 #!/usr/bin/env bash
 
+date ; set +vx  ; set -vx ; # echo off, then echo on
+set +vx
+echo ~----------~----------Startinga [dirname $0 basename $0] `dirname "$0"`/`basename "$0"` 
+#echo ~----------~----------Startingb $HOSTNAME, pwd: `pwd`, dlr0: "$0", bashsource0: "${BASH_SOURCE[0]}", $(date +"%Y-%m-%d_%H.%M.%S")
+echo bashsource@0: "${BASH_SOURCE[@]}"  # echo full bashsource array
+
+
 function main1() 
 {
 set -vx
 
-#usage: /var/www/html/hrdb/actions/imp-empl.sh
+# usage: see makefile
 
-cd /srv/web/incident295
-
-
-source /home/albe/shc/21env.sh
-
-pw='dx'
 
 # mysql -udg417 -p$pw -e "truncate table lukup.emp_enterprise"
-sleep 2
 
-#mysql --local-infile=1  -uhruser -p$mysql_hruser_pass</home/albe/share203/incident295/sql/import_csv_enterprise_empl.sql
-echo 107-356
-mysql --local-infile=1  -uhruser -p$mysql_hruser_pass</var/www/html/hrdb/actions/import_csv_enterprise_empl.sql
+echo 'msg-2018-09-12_16.13'
+
+mysql --local-infile=1  -uroot -p"$MYSQL_ROOT_PASSWORD"</root/sh21.sql
 
 
 }
@@ -26,16 +26,15 @@ mysql --local-infile=1  -uhruser -p$mysql_hruser_pass</var/www/html/hrdb/actions
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-function other()  
+function notes()  
 {
 exit 999
 
-chmod ugo+x /var/www/html/cilist/actions/email_owners_script.sh
-/var/www/html/cilist/actions/email_owners_script.sh
+
 }
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-date
+
 main1
 date

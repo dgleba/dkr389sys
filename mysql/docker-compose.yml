@@ -19,9 +19,9 @@ services:
     volumes:
       # - /var/aa/mysql/:/var/lib/mysql/
       # - /var/www/mysql385/:/var/lib/mysql/
-      - ../../data/mysql389dbm/:/var/lib/mysql/
-      - .:/root
-      - ../../data/data389/:/home
+      - ../../data/mysql389dbm/:/var/lib/mysql/ # folder for mysql's internal data files.
+      - .:/root  # folder for scripts, etc.
+      - ../../data/data389/:/home # folder for exported data, etc.
     networks:
       - one
 
