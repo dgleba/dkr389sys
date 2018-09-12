@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+# docker-compose  -f docker-compose-dev.yml up --build --force-recreate
+
+# https://dev.to/acro5piano/specifying-user-and-group-in-docker-i2e
+# user: "${uiddkr}:${giddkr}" in docker-compose 
+export uiddkr=${UID}
+export giddkr=docker
+export giddkr=${GID}
+
+docker-compose  -f docker-compose.prod.yml up --build --force-recreate
+

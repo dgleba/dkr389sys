@@ -1,0 +1,31 @@
+
+version: '3.6'
+
+services:
+
+  dbm:
+    image: mysql:5.7.22
+    # build: .
+    # image: dkr378php8mysq
+    restart: always
+    # container_name: mysqlm
+    env_file:
+      - ../.env
+    # environment:
+      # MYSQL_ROOT_PASSWORD: root
+      # MYSQL_DATABASE: test
+    ports:
+      - "6091:3306"
+    volumes:
+      # - /var/aa/mysql/:/var/lib/mysql/
+      # - /var/www/mysql385/:/var/lib/mysql/
+      - ../../data/mysql389dbm/:/var/lib/mysql/
+      - .:/root
+      - ../../data/data389/:/home
+    networks:
+      - one
+
+networks:
+  one:
+    name: one
+      external:true

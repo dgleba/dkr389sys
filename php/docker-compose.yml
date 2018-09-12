@@ -1,0 +1,60 @@
+
+# dkr387php
+
+version: '3.6'
+
+services:
+
+  web:
+    #image: php:7.2.2-apache
+    build: ./php
+    # image: dkr378php8
+    # container_name: dkr378php8
+    restart: always
+    # depends_on:
+      # - db
+    env_file:
+      - ../.env
+    volumes:
+      - ../html/:/var/www/html/
+      
+      # - ./dkr378php6/php/xtra.php.ini:/etc/php5/apache2/conf.d/custom.php.ini
+      # https://stackoverflow.com/questions/41691584/docker-compose-wont-volume-my-php-ini-file
+      # - ./php/:/var/www/html/
+      # - ./dkr378php6/php:/usr/local/etc/php
+      # - ./phpdocker/php-fpm/php-ini-overrides.ini:/etc/php5/fpm/conf.d/99-overrides.ini
+      
+    ports:
+      - "6092:80"
+    stdin_open: true
+    tty: true
+    networks:
+      - one
+    
+    
+  # db:
+    # image: mysql
+    # # build: ./mysql
+    # # image: dkr378php8mysq
+    # # container_name: dkr378php8mysq
+    # restart: always
+    # env_file:
+      # - env
+    # # environment:
+      # # MYSQL_ROOT_PASSWORD: root
+      # # MYSQL_DATABASE: test
+      # # MYSQL_USER: dev
+      # # MYSQL_PASSWORD: dev
+    # # ports:
+      # # - "6022:3306"
+    # volumes:
+      # - ../data/mysql387php/:/var/lib/mysql/
+    # networks:
+      # - one
+
+      
+networks:
+  one:
+    name: one
+      external:true
+    
