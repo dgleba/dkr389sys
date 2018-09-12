@@ -1,5 +1,7 @@
 version: '3.6'
+
 services:
+
   nginx:
     image: nginx
     ports:

@@ -12,10 +12,6 @@ services:
       - "6093:8000"
     # depends_on:
       # - dbdjango
-    # environment:
-      # DJANGO_SECRET_KEY: 1234
-      # SECRET_KEY: 1234
-      # MYSQL_ROOT_PASSWORD: root
     env_file:
       - .env
     networks:
