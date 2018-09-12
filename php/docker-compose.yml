@@ -17,13 +17,7 @@ services:
       - ../.env
     volumes:
       - ../html/:/var/www/html/
-      
-      # - ./dkr378php6/php/xtra.php.ini:/etc/php5/apache2/conf.d/custom.php.ini
-      # https://stackoverflow.com/questions/41691584/docker-compose-wont-volume-my-php-ini-file
-      # - ./php/:/var/www/html/
-      # - ./dkr378php6/php:/usr/local/etc/php
-      # - ./phpdocker/php-fpm/php-ini-overrides.ini:/etc/php5/fpm/conf.d/99-overrides.ini
-      
+           
     ports:
       - "6092:80"
     stdin_open: true
