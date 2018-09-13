@@ -61,6 +61,18 @@ up:
 # dev recreate build force
 	docker-compose  up 
 
+
+mm:  
+	docker-compose run djangodev python manage.py makemigrations
+  
+mi:  
+	docker-compose run djangodev python manage.py migrate
+  
+csu:  
+	docker-compose run djangodev python manage.py createsuperuser
+  
+
+  
   
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
